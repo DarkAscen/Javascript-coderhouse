@@ -1,36 +1,41 @@
-let compra = confirm("¿Desea realizar una compra?");
+let peluchesDisponibles = [{nombre: "OSO POLAR", id: 1, valor: 60, descripcion: "Peluche de un oso polar"},
+    {nombre: "PINGUINO", id: 2, valor: 18, descripcion: "Peluche de un pinguino"},
+    {nombre: "ELEFANTE MARINO", id: 3, valor: 14, descripcion: "Peluche de un elefante marino"},
+    {nombre: "ORCA", id: 4, valor: 42, descripcion: "Peluche de orca"},
+    {nombre: "BALLENA AZUL", id: 5, valor: 36, descripcion: "Peluche de ballena azul"},
+    {nombre: "PEZ", id: 6, valor: 24, descripcion: "Peluche de pez de la Antartida"}];
 
-function calculoCompra(valor1, valor2) {
-    let valorPuntos = valor1 * valor2;
-    console.log("El valor es de " + valorPuntos + "$ ");
+function agregarPeluche () {
+    const nombre = prompt("Ingrese el nombre del peluche");
+    const valor = parseFloat(prompt("Ingrese el valor del peluche"));
+    const descripcion = prompt("Ingrese una descripcion del peluche");
+    const nuevoPeluche = {
+        nombre: nombre,
+        valor: valor,
+        descripcion: descripcion
+    };
+    peluchesDisponibles.push(nuevoPeluche);
+    return "El peluche ha sido agregado satisfactoriamente";
 }
 
-do {
-    if (compra) {
-        let compraPuntos = prompt("Ingrese la cantidad de puntos a comprar (La cantidad permitida se encuentra entre 500 y 8000 puntos)");
-        if (compraPuntos >= 500 && compraPuntos <= 8000) {
-            let rangoCompra;
-            if (compraPuntos >= 500 && compraPuntos < 1500) {
-                rangoCompra = 10;
-                calculoCompra(compraPuntos, rangoCompra);
-            }   else if (compraPuntos >= 1500 && compraPuntos < 3000) {
-                rangoCompra = 9;
-                calculoCompra(compraPuntos, rangoCompra);
-            }   else if (compraPuntos >= 3000 && compraPuntos < 5000) {
-                rangoCompra = 8;
-                calculoCompra(compraPuntos, rangoCompra);
-            }   else if (compraPuntos >= 5000 && compraPuntos <= 8000) {
-                rangoCompra = 6;
-                calculoCompra(compraPuntos, rangoCompra);
-            }   
-            compra = confirm("¿Desea realizar otra compra?");
-            if (compra === false) {
-                console.log("Gracias por su visita.")
-            }
-        }   else {
-                console.log("La cantidad de puntos indicada no se encuentran dentro del rango permitido de compra o ingreso un valor no válido.");
-        }
+function borrarPeluche () {
+    const nombreIngresado = prompt("Ingrese el nombre del peluche a borrar");
+    const nombreBorrar = nombreIngresado.toUpperCase();
+    const index = peluchesDisponibles.findIndex(peluchesDisponibles => peluchesDisponibles.nombre === nombreBorrar)
+    if (index !== -1) { 
+        peluchesDisponibles.splice(index, 1);
+        return console.log(nombreBorrar + " ha sido borrado con exito.")
     } else {
-        console.log("Gracias por su visita.")
+        alert("No se ha encontrado el peluche indicado.");
     }
-} while (compra); 
+}
+
+function mostrarPeluches () {
+    console.log("Lista de peluches:");
+    console.table(peluchesDisponibles);
+}
+
+function buscarPeluche (id) {
+    let pelucheBuscado = peluchesDisponibles.find((peluche) => peluche.id === parseInt(id))
+    return pelucheBuscado;
+}
