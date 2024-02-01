@@ -1,37 +1,55 @@
-let compra = confirm("¿Desea realizar una compra?");
+const tabla = document.querySelector("table tbody")
+const botonComprar = document.querySelector("button#pagar")
+const totalCompra = document.querySelector("td.precioTotal")
+const botonEliminar = document.querySelector("th.eliminar")
 
-
-function calculoCompra(valor1, valor2) {
-    let valorPuntos = valor1 * valor2;
-    console.log("El valor es de " + valorPuntos + "$ ");
+function devolverCarrito() {
+    return JSON.parse(localStorage.getItem("miCarrito"))
 }
 
-do {
-    if (compra) {
-        let compraPuntos = prompt("Ingrese la cantidad de puntos a comprar (La cantidad permitida se encuentra entre 500 y 8000 puntos)");
-        if (compraPuntos >= 500 && compraPuntos <= 8000) {
-            let rangoCompra;
-            if (compraPuntos >= 500 && compraPuntos < 1500) {
-                rangoCompra = 10;
-                calculoCompra(compraPuntos, rangoCompra);
-            }   else if (compraPuntos >= 1500 && compraPuntos < 3000) {
-                rangoCompra = 9;
-                calculoCompra(compraPuntos, rangoCompra);
-            }   else if (compraPuntos >= 3000 && compraPuntos < 5000) {
-                rangoCompra = 8;
-                calculoCompra(compraPuntos, rangoCompra);
-            }   else if (compraPuntos >= 5000 && compraPuntos <= 8000) {
-                rangoCompra = 6;
-                calculoCompra(compraPuntos, rangoCompra);
-            }   
-            compra = confirm("¿Desea realizar otra compra?");
-            if (compra === false) {
-                console.log("Gracias por su visita.")
-            }
-        }   else {
-                console.log("La cantidad de puntos indicada no se encuentran dentro del rango permitido de compra o ingreso un valor no válido.");
-        }
-    } else {
-        console.log("Gracias por su visita.")
-    }
-} while (compra); 
+const carrito = devolverCarrito()
+
+function filaDeProducto(peluche) {
+    return `<tr>
+                <td><img src=".${peluche.imagen} alt="${peluche.nombre}" class="imagenCheck"></td>
+                <td>${peluche.nombre}</td>
+                <td>${peluche.valor} USD</td>
+                <td>ELIMINAR PRODUCTO</td>
+            </tr>`
+    
+}
+
+if (carrito) {
+    carrito.forEach((peluche)=> {
+        tabla.innerHTML += filaDeProducto(peluche);
+    })
+}
+
+function totalCarrito (){
+}
+
+botonComprar.addEventListener("click", ()=> {
+    finalizarCompra()
+    localStorage.removeItem("miCarrito")
+    carrito.length = 0
+    botonComprar.setAttribute("disabled", "true")
+})
+
+function finalizarCompra() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Compra realizada satisfactoriamente',
+        text: 'La compra se ha realizado de manera satisfactoria.',
+        confirmButtonText: 'Aceptar'
+    })
+}
+
+function totalCarrito() {
+    let total = 0;
+    carrito.forEach((peluche) => {
+        total += peluche.valor;
+    });
+    return total;
+}
+
+totalCompra.textContent = totalCarrito() + " USD";

@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tituloPagina {
+    font-size: 50px;
+    margin: 20px 0px 30px 3%;
+    font-family: Arial, sans-serif;
+}
+
+#contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.carta {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    width: 15%;
+    height: 280px;
+    justify-content: space-around;
+}
+
+.imagen {
+    height: 200px;
+    width: auto;
+}
+
+.imagenCheck {
+    height: 50px;
+    width: auto;
+}
+
+.buscador {
+    width: 50%;
+    margin: 10px auto 20px auto;
+    display: flex;
+    height: 30px;
+}
+
+.button {
+    padding: 5px;
+    margin-top: 10px;
+    width: 90%;
+}
+
+.cartaNombre {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+}
+
+#carrito {
+    width: 80px;
+    height: auto;
+    float: right;
+    cursor: pointer;
+    padding-top: 25px;
+    padding-right: 10px;
+}
+
+header {
+    background-color: rgb(245, 244, 244);
+    padding: 5px 0;
+}
+
+footer {
+    background-color: rgb(103, 104, 104);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+}
+
+footer p, footer h2 {
+    margin: 10px;
+}
+
+.volverComprar {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+table {
+    border: 2px solid #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
+    margin: 30px auto;
+    font-family: Arial, sans-serif;
+}
+
+thead {
+    width: 100%;
+    display: flex;
+    background-color: aquamarine;
+}
+
+th {
+    width: 300px;
+}
+
+tr {
+    border-bottom: 2px solid #111;
+    padding: 15px 10px;
+}
+
+td {
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+tbody tr {
+    display: flex;
+    flex-direction: row;
+}
+
+tfoot tr{
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    padding: none;
+    border: none;
+}
+
+tfoot tr td {
+    padding: 10px 0;
+}
+
+.botonesCheck {
+    margin: 10px 60px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border: 2px solid #111;
+    background-color: aquamarine;
+}
