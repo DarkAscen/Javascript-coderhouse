@@ -1,0 +1,44 @@
+[   
+    {
+        "nombre": "OSO POLAR", 
+        "id": 1, 
+        "valor": 46, 
+        "descripcion": "Peluche de un oso polar", 
+        "imagen": "./imagenes/osoPolar.webp"
+    },
+    {
+        "nombre": "PINGUINO", 
+        "id": 2, 
+        "valor": 32, 
+        "descripcion": "Peluche de un pinguino", 
+        "imagen": "./imagenes/pinguino.webp"
+    },
+    {
+        "nombre": "FOCA", 
+        "id": 3, 
+        "valor": 18, 
+        "descripcion": "Peluche de una foca", 
+        "imagen": "./imagenes/foca.webp"
+    },
+    {
+        "nombre": "ORCA", 
+        "id": 4, 
+        "valor": 22, 
+        "descripcion": "Peluche de orca", 
+        "imagen": "./imagenes/orca.jpg"
+    },
+    {
+        "nombre": "BALLENA AZUL", 
+        "id": 5, 
+        "valor": 36, 
+        "descripcion": "Peluche de ballena azul", 
+        "imagen": "./imagenes/ballenaAzul.jpg"
+    },
+    {
+        "nombre": "PEZ", 
+        "id": 6, 
+        "valor": 16, 
+        "descripcion": "Peluche de pez de la Antartida", 
+        "imagen": "./imagenes/pez.jpeg"
+    }
+]
