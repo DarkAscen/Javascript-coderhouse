@@ -155,4 +155,5 @@ tfoot tr td {
     font-weight: bold;
     border: 2px solid #111;
     background-color: aquamarine;
+    cursor: pointer;
 }
