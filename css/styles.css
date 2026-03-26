@@ -3,11 +3,13 @@
     padding: 0;
 }
 
+
 .tituloPagina {
     font-size: 50px;
     margin: 20px 0px 30px 3%;
     font-family: Arial, sans-serif;
 }
+
 
 #contenedor {
     display: flex;
@@ -16,6 +18,7 @@
     width: 1200px;
     margin: 0 auto;
 }
+
 
 .carta {
     border: 2px solid black;
@@ -29,15 +32,18 @@
     justify-content: space-around;
 }
 
+
 .imagen {
     height: 200px;
     width: auto;
 }
 
+
 .imagenCheck {
     height: 50px;
     width: auto;
 }
+
 
 .buscador {
     width: 50%;
@@ -46,11 +52,13 @@
     height: 30px;
 }
 
+
 .button {
     padding: 5px;
     margin-top: 10px;
     width: 90%;
 }
+
 
 .cartaNombre {
     font-weight: bold;
@@ -58,6 +66,7 @@
     margin-bottom: 5px;
     font-family: Arial, sans-serif;
 }
+
 
 #carrito {
     width: 80px;
@@ -68,10 +77,12 @@
     padding-right: 10px;
 }
 
+
 header {
     background-color: rgb(245, 244, 244);
     padding: 5px 0;
 }
+
 
 footer {
     background-color: rgb(103, 104, 104);
@@ -83,15 +94,28 @@ footer {
     flex-direction: column;
 }
 
+
 footer p, footer h2 {
     margin: 10px;
 }
+
 
 .volverComprar {
     display: flex;
     justify-content: center;
     margin: 10px;
 }
+
+
+#pagar:hover {
+    cursor: pointer;
+}
+
+
+#volver:hover {
+    cursor: pointer;
+}
+
 
 table {
     border: 2px solid #111;
@@ -103,27 +127,33 @@ table {
     font-family: Arial, sans-serif;
 }
 
+
 thead {
     width: 100%;
     display: flex;
     background-color: aquamarine;
 }
 
+
 th {
     width: 300px;
 }
+
 
 tr {
     border-bottom: 2px solid #111;
     padding: 15px 10px;
 }
 
+
 td {
     padding: 10px;
     width: 300px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+
 
 tbody {
     display: flex;
@@ -131,10 +161,12 @@ tbody {
     width: 100%;
 }
 
+
 tbody tr {
     display: flex;
     flex-direction: row;
 }
+
 
 tfoot tr{
     font-weight: bold;
@@ -144,16 +176,30 @@ tfoot tr{
     border: none;
 }
 
+
 tfoot tr td {
     padding: 10px 0;
 }
 
+
 .botonesCheck {
-    margin: 5px 60px;
+    margin: 10px 60px;
     padding: 10px;
     font-family: Arial, sans-serif;
     font-weight: bold;
     border: 2px solid #111;
     background-color: aquamarine;
+}
+
+
+#texto-eliminar {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+
+#texto-eliminar:hover {
     cursor: pointer;
 }
+
+
