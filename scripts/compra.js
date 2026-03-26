@@ -11,7 +11,7 @@ const carrito = devolverCarrito()
 
 function filaDeProducto(peluche) {
     return `<tr>
-                <td><img src="${peluche.imagen} alt="${peluche.nombre}" class="imagenCheck"></td>
+                <td><img src="${peluche.imagen}" alt="${peluche.nombre}" class="imagenCheck"></td>
                 <td>${peluche.nombre}</td>
                 <td>$${peluche.valor} USD</td>
                 <td>ELIMINAR PRODUCTO</td>
