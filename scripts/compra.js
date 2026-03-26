@@ -68,20 +68,30 @@ botonComprar.addEventListener("click", ()=> {
 
 
 function clickEliminar() {
-    const botonesEliminar = document.querySelectorAll("td.eliminar")
-    if (botonesEliminar.length > 0) {
-        botonesEliminar.forEach((botonEliminar)=> {
-            botonEliminar.addEventListener("click", ()=> eliminarPeluche(botonEliminar.id))
-        })
-    }
+    const botonesEliminar = document.querySelectorAll("td.eliminar");
+    botonesEliminar.forEach((boton) => {
+        // Usamos onclick para evitar duplicar eventos al recargar la tabla
+        boton.onclick = () => eliminarPeluche(boton.id);
+    });
 }
 
 
 function eliminarPeluche(pelucheId) {
-    const indice = carrito.findIndex((peluche)=> peluche.id === parseInt(pelucheId))
-    carrito[indice].cantidad === 1 ? carrito.splice(indice, 1) : carrito[indice].cantidad--
-    cargarCarrito()
-    mostrarTotal()
+    let carritoActual = devolverCarrito() || [];
+    const indice = carritoActual.findIndex((p) => p.id === parseInt(pelucheId));
+
+    if (indice !== -1) {
+        if (carritoActual[indice].cantidad > 1) {
+            carritoActual[indice].cantidad--;
+        } else {
+            carritoActual.splice(indice, 1);
+        }
+
+        localStorage.setItem("miCarrito", JSON.stringify(carritoActual));
+        
+        cargarCarrito();
+        mostrarTotal();
+    }
 }
 
 
@@ -96,15 +106,8 @@ function finalizarCompra() {
 
 
 function totalCarrito() {
-    if (carrito.length > 0) {
-        let total = 0;
-        carrito.forEach((peluche) => {
-            total += peluche.valor * peluche.cantidad;
-        });
-        return total;
-    } else {
-        return 0;
-    }
+    const carritoParaSumar = devolverCarrito() || [];
+    return carritoParaSumar.reduce((acc, p) => acc + (p.valor * p.cantidad), 0);
 }
 
 
