@@ -46,7 +46,7 @@ function cartaPeluche (peluche) {
                 <div><img src="${peluche.imagen}" class="imagen"></div>
                 <div class="cartaNombre"><p>${peluche.nombre}</p></div>
                 <div class="cartaPrecio"><p>$${peluche.valor} USD</p></div>
-                <button id="${peluche.id}" class="button button-outline button-add" title="Agregar al carrito">COMPRAR</button>
+                <button id="${peluche.id}" class="button button-outline button-add botonIndex" title="Agregar al carrito">COMPRAR</button>
             </div>`
 }
 
