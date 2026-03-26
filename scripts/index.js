@@ -92,7 +92,7 @@ pagarCarrito.addEventListener("mousemove", ()=> {
 
 
 pagarCarrito.addEventListener("click", ()=> {
-    carrito.length > 0 ? location.href = "./paginas/checkout.html" : notificar('El carrito se encuentra vacio.', 'darkorange');
+    carrito.length > 0 ? location.href = "paginas/checkout.html" : notificar('El carrito se encuentra vacio.', 'darkorange');
 })
 
 
